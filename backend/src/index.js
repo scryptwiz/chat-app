@@ -21,6 +21,10 @@ app.use(express.json());
 
 app.use("/api/messages", messageRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 setupSocket(io);
 
 const PORT = process.env.PORT || 3001;
